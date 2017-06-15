@@ -5,6 +5,9 @@
  * @author Jesse Nickerson
  * @version 20170613
  */
+ 
+ import java.text.*;
+ 
 public class Check
 {
     private String permanentName = "Jesse Nickerson";
@@ -34,9 +37,11 @@ public class Check
      */
     public void printCheck()
     {
+        DecimalFormat dollar = new DecimalFormat("#,##0.00");
+        
         System.out.println("*******************************************************************");
         System.out.println(permanentName + "                        Check # " + checkNumber);
-        System.out.println("Pay to the order of " + payee + "         $" + dollarAmount);
+        System.out.println("Pay to the order of: " + payee + "         $" + dollar.format(dollarAmount));
         System.out.println("Reason: " + reason);
         System.out.println("*******************************************************************");
     }
